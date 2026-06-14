@@ -1,13 +1,10 @@
-# ML Lab: 60 Tasks from Zero to Pro
+# Python Foundations
 
-Personal practice repository — 60 hands-on ML tasks.
+10 hands-on Python projects — from basics to file processing.
 
-## Structure
-Each task = one file/notebook/folder with a short note in NOTES.md
-
-## Progress
-- [x] L01 — hello-cli
-- [ ] L02 — ...
+## Projects
+- [01-hello-cli](./01-hello-cli) — CLI utility, argparse, pytest
+- [02-csv-stats](./02-csv-stats) — CSV reader, statistics, try/except
 
 ## Stack
-Python · pytest · numpy · pandas · sklearn · PyTorch
+Python · pytest
