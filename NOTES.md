@@ -30,3 +30,20 @@
 - accidentally imported `numbers` and `result` from standard library (PyCharm auto-import)
 
 **Time spent:** ~1 hours
+
+## L03 — json-merger
+
+**What I built:** CLI utility that merges N JSON files with last-wins conflict resolution
+
+**What I learned:**
+- json.load() — reading JSON file into Python dict
+- json.dumps() — converting dict to formatted JSON string
+- dict.update() — merging dictionaries
+- nargs="+" — accepting multiple arguments in argparse
+- pytest.raises() — testing that errors are raised correctly
+- Edge cases — empty files, missing files, duplicate keys
+
+**Where I got stuck:**
+- return was inside the for loop instead of outside
+
+**Time spent:** ~1 hour
