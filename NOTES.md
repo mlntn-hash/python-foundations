@@ -47,3 +47,22 @@
 - return was inside the for loop instead of outside
 
 **Time spent:** ~1 hour
+
+## L04 — log-parser
+
+**What I built:** CLI utility that parses nginx access logs, counts top-10 IPs and calculates average response time
+
+**What I learned:**
+- re module — regular expressions for pattern matching
+- \d+ — one or more digits in regex
+- () groups in regex — extracting specific parts with match.group()
+- collections.Counter — counting occurrences automatically
+- most_common(n) — getting top N elements
+- tmp_path in pytest — creating temporary files for tests
+- pytest.approx() — comparing float numbers with tolerance
+
+**Where I got stuck:**
+- named response_times variable as response_time (without s)
+- hardcoded "access.log" filename instead of using filename parameter
+
+**Time spent:** ~1.5 hours
