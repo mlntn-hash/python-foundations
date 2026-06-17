@@ -66,3 +66,24 @@
 - hardcoded "access.log" filename instead of using filename parameter
 
 **Time spent:** ~1.5 hours
+
+## L05 — web-scraper
+
+**What I built:** CLI utility that scrapes article titles from a website and saves them to CSV using requests + BeautifulSoup
+
+**What I learned:**
+- requests.get() — fetching HTML content from a website
+- BeautifulSoup — parsing HTML and finding elements
+- find() vs find_all() — finding one element vs all matching elements
+- CSS class selector — class_="..." to find elements by their class
+- list slicing — titles[:count] to take first N elements
+- list comprehension — [t.text for t in titles] as a compact loop
+- default parameter values — count: int = 10
+- csv.writer — saving data to CSV files
+
+**Where I got stuck:**
+- tried scraping Google instead of a site with matching HTML structure
+- typo: scrape.titles instead of scrape_titles
+- typo: "urf-8" instead of "utf-8"
+
+**Time spent:** ~1.5 hours
