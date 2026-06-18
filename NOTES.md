@@ -87,3 +87,29 @@
 - typo: "urf-8" instead of "utf-8"
 
 **Time spent:** ~1.5 hours
+
+## L06 — async-fetcher
+
+**What I built:** Rewrote the synchronous web scraper from Task 5 using asyncio + aiohttp, fetching 5 Hacker News pages concurrently instead of one by one. Measured and compared execution time between the sync and async versions on the same set of URLs.
+
+**What I learned:**
+- async def / await — defining and running coroutines
+- aiohttp.ClientSession — async HTTP client; one session is created once and passed into scrape() as a parameter, reused across all requests instead of opening a new session each time
+- asyncio.gather() — running multiple coroutines concurrently and collecting results in the same order tasks were submitted
+- asyncio.run() — entry point that creates and starts the event loop
+- Event loop — how asyncio switches between coroutines while one is waiting on network I/O, instead of blocking
+- The difference between .append() and .extend() when flattening a list of lists
+- pytest-asyncio and @pytest.mark.asyncio — testing async functions with pytest
+- tmp_path pytest fixture — writing test output to a temporary, auto-cleaned directory
+
+**Where I got stuck:**
+- used .append() instead of .extend() when merging results from gather(), so titles ended up as 5 nested lists instead of 50 flat strings
+- forgot to call asyncio.run(main()) at the end of the file — script exited with code 0 and no output, because the coroutine was defined but never actually executed
+- needed clarification on why session is created once in main() and passed into scrape(), rather than scrape() creating its own session each call
+
+**Results:**
+- Sync version (5 pages, sequential): 6.42s
+- Async version (5 pages, concurrent): 1.11s
+- ~5.8x speedup
+
+**Time spent:** ~1.5 hours
