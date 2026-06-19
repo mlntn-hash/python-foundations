@@ -113,3 +113,26 @@
 - ~5.8x speedup
 
 **Time spent:** ~1.5 hours
+
+## L07 — mini-orm
+
+**What I built:** A minimal, dataclass-based ORM layer over SQLite — a `User` class with `save()`, `get()`, and `delete()` methods, using only the standard library (`dataclasses`, `sqlite3`). No external dependencies.
+
+**What I learned:**
+- @dataclass — auto-generating __init__ from typed class fields
+- sqlite3 basics: connect(), execute() with parameterized queries (?), commit(), close(), fetchone(), cursor.lastrowid
+- @staticmethod vs @classmethod — when a method needs `cls` to construct new instances (get()) vs when it doesn't need any instance/class state (_connect())
+- SQLite transactions: changes aren't persisted to disk until conn.commit() is called — closing a connection without committing silently discards the change
+- monkeypatch (pytest fixture) — temporarily replacing a module-level variable (DB_NAME) for the duration of a test, so tests don't touch the real database file
+- Writing a fixture with `yield` to set up test state (temp DB + table) before each test runs
+
+**Where I got stuck (a lot, this time):**
+- multiple rounds of indentation mistakes — methods and even whole test functions accidentally defined outside/nested incorrectly, making them invisible to the class or to pytest's test collection ("collected 0 items")
+- trailing comma in a multi-line CREATE TABLE string caused a SQL syntax error
+- typo: INSENT instead of INSERT
+- mismatched table name (user vs users) between CREATE TABLE and the other queries
+- UPDATE query had 4 placeholders but only 3 parameters supplied — twice, in two separate fixes
+- the trickiest bug: conn.commit() and conn.close() were nested inside the else branch of save(), so new INSERT calls were silently never persisted to disk — found by adding a debug print() to compare the row id vs the query result
+- a method name mismatch (create_table vs _create_table) between orm.py and the test fixture
+
+**Time spent:** ~3.5 hours
