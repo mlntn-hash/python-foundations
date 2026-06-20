@@ -10,6 +10,7 @@
 - [05-web-scraper](./05-web-scraper) — web scraping, requests, BeautifulSoup, CSV export
 - [06-async-fetcher](./06-async-fetcher) — asyncio + aiohttp, concurrent requests, sync vs async benchmark
 - [07-mini-orm](./07-mini-orm) — dataclass + sqlite3, CRUD without external libraries
+- [08-git-trainer](./08-git-trainer) — branch, merge, rebase, cherry-pick, revert practice (incl. conflict resolution)
 
 ## Stack
 Python · pytest · requests · BeautifulSoup · aiohttp · asyncio
