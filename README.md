@@ -9,6 +9,7 @@
 - [04-log-parser](./04-log-parser) — nginx log parser, regex, collections.Counter
 - [05-web-scraper](./05-web-scraper) — web scraping, requests, BeautifulSoup, CSV export
 - [06-async-fetcher](./06-async-fetcher) — asyncio + aiohttp, concurrent requests, sync vs async benchmark
+- [07-mini-orm](./07-mini-orm) — dataclass + sqlite3, CRUD without external libraries
 
 ## Stack
 Python · pytest · requests · BeautifulSoup · aiohttp · asyncio
