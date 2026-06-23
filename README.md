@@ -12,5 +12,7 @@
 - [07-mini-orm](./07-mini-orm) — dataclass + sqlite3, CRUD without external libraries
 - [08-git-trainer](./08-git-trainer) — branch, merge, rebase, cherry-pick, revert practice (incl. conflict resolution)
 - [09-docker-hello](./09-docker-hello) — packaging the web scraper into a Docker image, build/run, volumes
+- [10-github-actions](./10-github-actions) — CI pipeline (ruff + pytest) running on every PR via GitHub Actions
 ## Stack
-Python · pytest · requests · BeautifulSoup · aiohttp · asyncio
+Python · pytest · ruff · requests · BeautifulSoup · aiohttp · asyncio · sqlite3 · Docker · Git · GitHub Actions
+Standard library: argparse · csv · json · re · collections · dataclasses
