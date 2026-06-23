@@ -24,4 +24,4 @@ jobs:
 
       - name: Run test
         working-directory: 02-csv-stats
-        run: pytest 02-csv-stats -v
+        run: pytest -v
