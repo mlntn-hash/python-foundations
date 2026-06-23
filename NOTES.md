@@ -24,6 +24,7 @@
 - append() — adding elements to a list
 - if __name__ == "__main__" — protection from import
 - Building column statistics manually with min(), max(), sum(), len()
+- Test: trigger CI workflow
 
 **Where I got stuck:**
 - used `return` before adding min/max/mean to result
@@ -172,3 +173,4 @@
 - needed to understand why splitting COPY requirements.txt / RUN pip install from COPY scraper.py matters for build caching, instead of just doing one COPY for everything
 
 **Time spent:** ~30 minutes
+
