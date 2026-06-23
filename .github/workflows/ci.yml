@@ -23,4 +23,5 @@ jobs:
         run: ruff check 02-csv-stats
 
       - name: Run test
-        run: pytest 02-csv-stats -v
+        working-directory: 02-csv-stats
+        run: pytest -v
