@@ -154,3 +154,21 @@
 - revert removed more than expected (back to 3 lines instead of just undoing the last 2 added lines), because the diff being reverted was larger than anticipated due to how the conflict had been resolved earlier
 
 **Time spent:** ~30 minutes
+
+## L09 — docker-hello
+
+**What I built:** Packaged the Task 5 web scraper into a Docker image. `docker run` builds and runs the container, executing the scraper exactly as it would run locally — without needing Python or any libraries installed on the host.
+
+**What I learned:**
+- Dockerfile basics: FROM (base image), WORKDIR, COPY, RUN, CMD
+- Why dependencies (requirements.txt) are copied and installed in a separate, earlier layer than the application code — so Docker can reuse the cached "install" layer when only the code changes, instead of reinstalling everything on every build
+- docker build -t <name> . — building an image from a Dockerfile and tagging it with a readable name
+- docker run <image> — creating and starting a container from an image
+- Containers are isolated from the host filesystem by default — a file created inside a container (like articles.csv) doesn't appear on the host unless explicitly shared
+- Volumes/bind mounts (-v host_path:container_path) — mapping a host folder to a folder inside the container so files created inside the container are immediately visible on disk
+
+**Where I got stuck:**
+- typo in the Dockerfile: --no-cashe-dir instead of --no-cache-dir caused pip to fail with "no such option"
+- needed to understand why splitting COPY requirements.txt / RUN pip install from COPY scraper.py matters for build caching, instead of just doing one COPY for everything
+
+**Time spent:** ~30 minutes
