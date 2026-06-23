@@ -15,4 +15,6 @@
 - [10-github-actions](./10-github-actions) — CI pipeline (ruff + pytest) running on every PR via GitHub Actions
 ## Stack
 Python · pytest · ruff · requests · BeautifulSoup · aiohttp · asyncio · sqlite3 · Docker · Git · GitHub Actions
-Standard library: argparse · csv · json · re · collections · dataclasses
+
+## Standard library
+argparse · csv · json · re · collections · dataclasses
